@@ -1,0 +1,19 @@
+21:47:05 **** Incremental Build of configuration Debug for project Assign1 ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/optimize.d" -MT"Src/optimize.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/optimize.o" "../Src/optimize.s"
+arm-none-eabi-gcc -o "Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"C:\Users\anaka\Desktop\NUS\courses\EE\2028\Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.13.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.0.202305231506/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.13.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.0.202305231506/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(libc_a-signalr.o): in function `_kill_r':
+(.text._kill_r+0xe): warning: _kill is not implemented and will always fail
+Finished building target: Assign1.elf
+ 
+arm-none-eabi-size   Assign1.elf 
+arm-none-eabi-objdump -h -S  Assign1.elf  > "Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  18292	    472	   2088	  20852	   5174	Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1.list
+ 
+
+21:47:06 Build Failed. 1 errors, 1 warnings. (took 1s.53ms)
+
